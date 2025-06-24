@@ -1,0 +1,83 @@
+
+// Faça um algoritmo que ache o maior elemento de um vetor de 10 posições nomeado A.
+
+Prog
+    int A [10], maior = A[0];
+    para (int i= 0; i <= 9 ; i++) {
+        imprima ("Digite um valor: ");
+        leia A[i];
+        Se (A[i]>maior) {
+            maior <- A[i];
+        }
+    }
+    Imprima (maior);
+FimProg
+
+// Faça um algoritmo que ache a posição do menor elemento de um vetor de 10 posições nomeado A.
+
+Prog
+    int A [10], menor = A[0];
+    para (int i= 0; i <= 9 ; i++) {
+        imprima ("Digite um valor: ");
+        leia A[i];
+        Se (A[i]< menor) {
+            menor <- A[i];
+        }
+    }
+    Imprima (menor);
+FimProg
+
+// 5. Faça um algoritmo que armazene números inteiros em dois vetores de 30 elementos cada e gere e escreva um terceiro vetor contendo a soma de cada elemento de sua respectiva posição.
+
+Prog
+
+    int V1[30], V2[30], V3[30];
+    
+    para (i=1; i <= 30 ; i++) {
+        leia V1 [i];
+    }
+    para (i=1; i <= 30 ; i++) {
+        leia V2 [i];
+    }
+    para (i=1; i <= 30 ; i ← i+2) {
+        V3[i] ← V1 [(i*2)- 1];
+        V3[i+1] ←  V2[i *2];
+    }
+    para (i=1; i <= 30 ; i++) {
+        escreva V3[i];
+    }
+FimProg
+
+
+Seu pseudocódigo tem alguns problemas. Vamos analisá-lo:
+
+1. O principal problema está na lógica do terceiro loop onde você preenche V3. Você está tentando fazer operações complexas com os índices que não correspondem à simples soma dos elementos correspondentes.
+
+2. Os arrays em muitas linguagens começam com índice 0, mas mesmo considerando que você queira começar com 1 (como está fazendo), a lógica de preenchimento de V3 está incorreta para o objetivo declarado.
+
+Aqui está a correção para seu pseudocódigo:
+
+```
+Prog
+    int V1[30], V2[30], V3[30];
+    
+    para (i=1; i <= 30 ; i++) {
+        leia V1[i];
+    }
+    para (i=1; i <= 30 ; i++) {
+        leia V2[i];
+    }
+    para (i=1; i <= 30 ; i++) {
+        V3[i] ← V1[i] + V2[i];  // Simples soma dos elementos correspondentes
+    }
+    para (i=1; i <= 30 ; i++) {
+        escreva V3[i];
+    }
+FimProg
+```
+
+As principais diferenças são:
+1. Removi a lógica complexa de índices no terceiro loop
+2. Simplesmente somei os elementos correspondentes de V1 e V2 para formar V3
+
+Se você realmente queria implementar alguma lógica mais complexa com os índices (diferente do que foi pedido no enunciado), por favor me avise para que eu possa ajustar a solução. Mas de acordo com o enunciado ("contenha a soma de cada elemento de sua respectiva posição"), a solução acima é a correta.
